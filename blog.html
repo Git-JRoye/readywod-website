@@ -433,9 +433,6 @@
             </ul>
             
             <div class="nav-right">
-                <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
-                    <span id="theme-icon">🌙</span>
-                </button>
                 <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                     <div class="hamburger"></div>
                     <div class="hamburger"></div>
@@ -577,31 +574,6 @@
     </footer>
 
     <script>
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            const currentTheme = body.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                body.removeAttribute('data-theme');
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Load saved theme
-        function loadTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
-                document.getElementById('theme-icon').textContent = '☀️';
-            }
-        }
 
         // Mobile Menu Toggle
         function toggleMobileMenu() {
@@ -623,10 +595,6 @@
             });
         });
 
-        // Load theme on page load
-        window.addEventListener('load', () => {
-            loadTheme();
-        });
     </script>
 </body>
 </html>
