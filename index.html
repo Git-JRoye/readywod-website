@@ -392,6 +392,113 @@
         }
         
         /* App Info Section */
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 6rem 0;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .rating-display {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-right: 1rem;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 0.2rem;
+            margin-right: 1rem;
+        }
+        
+        .star {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-stars {
+            display: flex;
+            gap: 0.1rem;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-stars .star {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-text {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            color: #999;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
         .app-info {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -487,6 +594,21 @@
                 grid-template-columns: 1fr;
             }
             
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rating-display {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .rating-number {
+                font-size: 2.5rem;
+                margin-right: 0;
+            }
+            
             .cta-button {
                 padding: 1.2rem 2.5rem;
                 font-size: 1.2rem;
@@ -580,6 +702,117 @@
                     <div class="feature-icon">💪</div>
                     <h3>Custom Workouts</h3>
                     <p>Add your own sessions and let ReadyWOD automatically generate warm-ups and recovery routines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Users Are Saying</h2>
+            <div class="rating-summary">
+                <div class="rating-display">
+                    <div class="rating-number">5.0</div>
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="rating-text">Based on 13 App Store Reviews</div>
+                </div>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="testimonial-title">Great App!!</div>
+                    </div>
+                    <div class="testimonial-text">"Great app!! An easy to use app that's perfect for those days when you are at the gym and can't figure out what to do."</div>
+                    <div class="testimonial-author">- Eric212121</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="testimonial-title">Super Easy to Use</div>
+                    </div>
+                    <div class="testimonial-text">"Super easy to use."</div>
+                    <div class="testimonial-author">- Sparton18</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="testimonial-title">Makes WODS so Accessible!</div>
+                    </div>
+                    <div class="testimonial-text">"Great app! Loads of options, allows for workouts wherever I am (gym, home, vacation...etc). You rarely get this volume of workout content for free!"</div>
+                    <div class="testimonial-author">- KBS.17.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="testimonial-title">Just What I Need</div>
+                    </div>
+                    <div class="testimonial-text">"Easy generated functional fitness workouts where I can keep generate and save them and just workout!"</div>
+                    <div class="testimonial-author">- sodaapopped</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="testimonial-title">Wow! What a Beautiful App!</div>
+                    </div>
+                    <div class="testimonial-text">"This app turned me into David Goggins Jr."</div>
+                    <div class="testimonial-author">- Dave.B2014</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="testimonial-title">Fantastic!!</div>
+                    </div>
+                    <div class="testimonial-text">"This app is awesome and so easy to use. Love it!!!"</div>
+                    <div class="testimonial-author">- bodyhacks</div>
                 </div>
             </div>
         </div>
@@ -693,6 +926,14 @@
 
         // Observe feature cards for animation
         document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Observe testimonial cards for animation
+        document.querySelectorAll('.testimonial-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
