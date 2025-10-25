@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadyWOD - AI-Powered Fitness App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-logo {
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 6rem;
+            color: white;
+        }
+        
+        .hero-logo {
+            max-width: 300px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(238, 90, 36, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.6);
+        }
+        
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 6rem 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* App Info Section */
+        .app-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 0;
+        }
+        
+        .app-info h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .app-info p {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img class="nav-logo" src="images/Color logo - no background.svg" alt="ReadyWOD Logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <img class="hero-logo" src="images/Color logo - no background.svg" alt="ReadyWOD Logo">
+            <h1>ReadyWOD</h1>
+            <p>AI-powered fitness app that generates personalized workouts instantly. Train smarter, not harder.</p>
+            <a href="https://apps.apple.com/us/app/readywod/id6751735233" class="cta-button" target="_blank">Download on App Store</a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">📱 iOS Available Now • 🤖 Android Coming Soon</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why ReadyWOD?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Core ML learns from your workout history to recommend balanced, personalized routines that adapt to your progress.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Workouts</h3>
+                    <p>Tap once and get a complete workout. No more decision fatigue - just pure, efficient training.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>100% Offline</h3>
+                    <p>Everything runs on your device. No internet required, no data tracking, complete privacy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Smart Rotation</h3>
+                    <p>Prevents overtraining with intelligent movement rotation and balanced muscle group targeting.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Built-in Timers</h3>
+                    <p>EMOM, AMRAP, and lifting percentage calculators included. Everything you need in one app.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Custom Workouts</h3>
+                    <p>Add your own sessions and let ReadyWOD automatically generate warm-ups and recovery routines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-info">
+        <div class="container">
+            <h2>Built with AI, Designed for You</h2>
+            <p>ReadyWOD combines years of real workout data with Core ML intelligence to create the most personalized fitness experience possible.</p>
+            
+            <div class="highlight-box">
+                <h3>🌐 Completely Offline & Private</h3>
+                <p>All workouts, recommendations, and user data are stored on your device. No servers, no trackers, no dependencies — just fast, private fitness intelligence that works anywhere.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>📊 20,000+ Workouts Database</h3>
+                <p>Access a massive library of EMOM, AMRAP, Task, Bodyweight, Strength, and Minimalist workouts, all intelligently categorized and ready to use.</p>
+            </div>
+            
+            <div class="highlight-box" style="text-align: center;">
+                <h3>📱 Available Now on iOS</h3>
+                <p>Download ReadyWOD from the App Store and start training smarter today!</p>
+                <a href="https://apps.apple.com/us/app/readywod/id6751735233" target="_blank" style="display: inline-block; background: #000; color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 1rem;">Download on App Store</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">🤖 Android version coming soon!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ReadyWOD. All rights reserved. | <a href="mailto:readywod@outlook.com" style="color: #667eea;">Contact Us</a></p>
+        </div>
+    </footer>
+</body>
+</html>
