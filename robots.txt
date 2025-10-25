@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://readywod.com/sitemap.xml
+
+# Disallow crawling of images directory (optional)
+# Disallow: /images/
+
+# Allow all pages
+Allow: /about.html
+Allow: /blog.html
+Allow: /contact.html
+Allow: /privacy.html
