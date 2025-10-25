@@ -125,6 +125,17 @@
             padding: 0 20px;
         }
         
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .nav-logo {
             height: 40px;
         }
@@ -429,10 +440,6 @@
                 position: relative;
             }
             
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
             .nav-links {
                 position: absolute;
                 top: 100%;
@@ -455,6 +462,10 @@
                 transform: translateY(0);
                 opacity: 1;
                 visibility: visible;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
             }
             
             .nav-links a {
@@ -500,8 +511,19 @@
 <body>
     <nav>
         <div class="nav-container">
-            <img class="nav-logo" src="images/Color logo - no background.svg" alt="ReadyWOD Logo" loading="eager">
-            <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="nav-left">
+                <img class="nav-logo" src="images/Color logo - no background.svg" alt="ReadyWOD Logo" loading="eager">
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+            
+            <div class="nav-right">
                 <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
                     <span id="theme-icon">🌙</span>
                 </button>
@@ -511,13 +533,6 @@
                     <div class="hamburger"></div>
                 </div>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-            </ul>
         </div>
     </nav>
 
