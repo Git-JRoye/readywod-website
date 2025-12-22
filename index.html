@@ -52,7 +52,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID', {
-            page_title: 'ReadyWOD - AI-Powered Fitness App',
+            page_title: 'ReadyWOD - Workout Generator App',
             page_location: window.location.href
         });
     </script>
@@ -64,7 +64,11 @@
         "@type": "Organization",
         "name": "ReadyWOD",
         "url": "https://readywod.com",
-        "logo": "https://readywod.com/images/favicon-symbol.svg",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://readywod.com/images/favicon-symbol.svg",
+            "contentUrl": "https://readywod.com/images/favicon-symbol.svg"
+        },
         "sameAs": [
             "https://apps.apple.com/us/app/readywod/id6751735233"
         ],
@@ -97,7 +101,10 @@
         "author": {
             "@type": "Organization",
             "name": "ReadyWOD",
-            "logo": "https://readywod.com/images/Color%20logo%20-%20no%20background.svg"
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://readywod.com/images/favicon-symbol.svg"
+            }
         }
     }
     </script>
