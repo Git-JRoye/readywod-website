@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Minute Beginner Series Setup Guide - ReadyWOD</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn how to set up and load the 10 Minute Beginner Series program in ReadyWOD. Step-by-step instructions with screenshots for configuring your workout schedule.">
+    <meta name="keywords" content="ReadyWOD beginner series, workout program setup, program schedule, 10 minute beginner, fitness program guide">
+    <meta name="author" content="ReadyWOD">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://readywod.com/10-minute-beginner-series.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://readywod.com/10-minute-beginner-series.html">
+    <meta property="og:title" content="10 Minute Beginner Series Setup Guide - ReadyWOD">
+    <meta property="og:description" content="Learn how to set up and load the 10 Minute Beginner Series program in ReadyWOD.">
+    <meta property="og:image" content="https://readywod.com/images/Color%20logo%20-%20no%20background.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://readywod.com/10-minute-beginner-series.html">
+    <meta property="twitter:title" content="10 Minute Beginner Series Setup Guide - ReadyWOD">
+    <meta property="twitter:description" content="Learn how to set up and load the 10 Minute Beginner Series program in ReadyWOD.">
+    <meta property="twitter:image" content="https://readywod.com/images/Color%20logo%20-%20no%20background.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon-symbol.svg">
+    <link rel="apple-touch-icon" href="images/Color logo - no background.svg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav-logo {
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .hamburger {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-toggle.active .hamburger:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-toggle.active .hamburger:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active .hamburger:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .content-section.alt {
+            background: #f8f9fa;
+        }
+        
+        .intro-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .intro-box h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-box p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+        }
+        
+        .intro-box ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .intro-box li {
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+        }
+        
+        .step-container {
+            margin-bottom: 4rem;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .step-title {
+            font-size: 2rem;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .step-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        
+        .step-text {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step-text h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .step-text ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .step-text li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+        
+        .step-image {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .step-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-image-placeholder {
+            background: #e9ecef;
+            border-radius: 10px;
+            padding: 3rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.1rem;
+            border: 2px dashed #ccc;
+        }
+        
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .note-box strong {
+            color: #856404;
+        }
+        
+        .note-box p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .info-box strong {
+            color: #0c5460;
+        }
+        
+        .info-box p {
+            color: #0c5460;
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                position: relative;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 15px 15px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                gap: 0.5rem;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                text-align: center;
+                border-radius: 8px;
+                font-size: 1.1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .step-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .step-number {
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+            
+            .step-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html">
+                    <img class="nav-logo" src="images/Color logo - no background.svg" alt="ReadyWOD Logo">
+                </a>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <div class="hamburger"></div>
+                    <div class="hamburger"></div>
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>10 Minute Beginner Series</h1>
+            <p>Complete setup guide to get started with your year-long beginner fitness program</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>About the 10 Minute Beginner Series</h2>
+                <p>The 10 Minute Beginner Series is a comprehensive year-long program designed to help you build a consistent fitness routine. This program is perfect for beginners and can be customized to fit your schedule.</p>
+                <ul>
+                    <li><strong>Program Duration:</strong> 1 year (52 weeks)</li>
+                    <li><strong>Default Schedule:</strong> 5 days per week</li>
+                    <li><strong>Workout Length:</strong> 10 minutes per session</li>
+                    <li><strong>Flexible Scheduling:</strong> Choose your workout days (3, 4, or 5 days per week)</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Note:</strong> If you select fewer than 5 workout days per week, the program will automatically extend to ensure you complete all workouts.</p>
+            </div>
+
+            <div class="step-container">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Access Program Schedule Settings</div>
+                </div>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>Open Settings</h3>
+                        <p>To begin setting up your 10 Minute Beginner Series, you'll first need to configure your workout schedule preferences.</p>
+                        <ol>
+                            <li>Open the ReadyWOD app</li>
+                            <li>Look for the <strong>gear icon (⚙️)</strong> in the top right corner of the screen</li>
+                            <li>Tap the gear icon to open the Settings menu</li>
+                            <li>Navigate to <strong>"Program Schedule"</strong> in the settings list</li>
+                        </ol>
+                        <div class="note-box">
+                            <p><strong>💡 Tip:</strong> The gear icon is always accessible from the main workout screen, making it easy to adjust your schedule at any time.</p>
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <div class="step-image-placeholder">
+                            Screenshot: Settings screen showing the gear icon in the top right corner
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section alt">
+        <div class="container">
+            <div class="step-container">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Configure Your Workout Days</div>
+                </div>
+                <div class="step-content">
+                    <div class="step-image">
+                        <div class="step-image-placeholder">
+                            Screenshot: Program Schedule screen showing the "Use Custom Schedule" toggle and workout days selection
+                        </div>
+                    </div>
+                    <div class="step-text">
+                        <h3>Set Your Schedule</h3>
+                        <p>In the Program Schedule settings, you'll configure which days of the week you want to work out.</p>
+                        <ol>
+                            <li>Enable the <strong>"Use Custom Schedule"</strong> toggle at the top</li>
+                            <li>Select your preferred workout days by tapping the checkboxes next to each day:
+                                <ul>
+                                    <li>Monday through Friday (recommended for 5 days/week)</li>
+                                    <li>Or choose 3-4 days that work best for your schedule</li>
+                                </ul>
+                            </li>
+                            <li>You'll see a summary showing which days are selected (e.g., "5 selected")</li>
+                            <li>The schedule preview will display: "Your workouts will be scheduled on: [selected days]"</li>
+                            <li>Tap <strong>"Save"</strong> in the top right corner to save your preferences</li>
+                            <li>Close the settings by tapping <strong>"Cancel"</strong> or the back button</li>
+                        </ol>
+                        <div class="info-box">
+                            <p><strong>📅 Important:</strong> The program will only schedule workouts on the days you select. If you choose 3 days per week instead of 5, the program will last longer than a year to ensure you complete all workouts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="step-container">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Open the Menu and Select the Program</div>
+                </div>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>Navigate to Programs</h3>
+                        <p>Now that your schedule is configured, it's time to load the 10 Minute Beginner Series program.</p>
+                        <ol>
+                            <li>From the main workout screen, tap the <strong>hamburger menu button (☰)</strong> in the upper left corner</li>
+                            <li>The side menu will slide in from the left</li>
+                            <li>In the menu, locate and tap <strong>"Programs"</strong></li>
+                            <li>Expand <strong>"10 Minute Series"</strong> by tapping on it</li>
+                            <li>Select <strong>"Beginner"</strong> from the list</li>
+                        </ol>
+                        <div class="note-box">
+                            <p><strong>💡 Tip:</strong> The menu shows your current track (e.g., "Beginner Track") at the top, and all available programs are organized by category for easy navigation.</p>
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <div class="step-image-placeholder">
+                            Screenshot: Side menu showing Programs -> 10 Minute Series -> Beginner selection
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section alt">
+        <div class="container">
+            <div class="step-container">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Select Your Start Date</div>
+                </div>
+                <div class="step-content">
+                    <div class="step-image">
+                        <div class="step-image-placeholder">
+                            Screenshot: Date picker or calendar interface for selecting the start date
+                        </div>
+                    </div>
+                    <div class="step-text">
+                        <h3>Choose When to Begin</h3>
+                        <p>After selecting the Beginner program, the app will prompt you to choose a start date for your program.</p>
+                        <ol>
+                            <li>A date picker or calendar will appear</li>
+                            <li>Select the date you want to begin the program</li>
+                            <li>This will be the date of your first workout</li>
+                            <li>Confirm your selection</li>
+                        </ol>
+                        <div class="info-box">
+                            <p><strong>📅 Scheduling Logic:</strong> The first workout will load on your selected start date. Subsequent workouts will follow in order, but will only appear on the workout days you configured in Step 2. For example, if you selected Monday-Friday and start on a Wednesday, your next workout will be on Thursday, then Friday, then Monday (skipping the weekend).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="step-container">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Program Loaded and Ready</div>
+                </div>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>Your Program is Active</h3>
+                        <p>Once you've selected your start date, the 10 Minute Beginner Series program will be loaded and ready to use!</p>
+                        <ol>
+                            <li>The first workout will appear in the <strong>Normal View</strong> on your selected start date</li>
+                            <li>You can view upcoming workouts in advance using:
+                                <ul>
+                                    <li>The <strong>calendar widget</strong> at the top of the workout screen</li>
+                                    <li>The <strong>Schedule tab</strong> in the bottom navigation bar</li>
+                                </ul>
+                            </li>
+                            <li>Workouts will automatically appear on your selected workout days</li>
+                            <li>Each workout includes:
+                                <ul>
+                                    <li>Warm-up exercises</li>
+                                    <li>Main 10-minute workout</li>
+                                    <li>Recovery/stretching recommendations</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="note-box">
+                            <p><strong>✅ You're All Set!</strong> Your program is now active and will guide you through a full year of beginner-friendly workouts. Just follow the schedule, complete each workout, and track your progress!</p>
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <div class="step-image-placeholder">
+                            Screenshot: Workout detail screen showing "10 Minute Beginner: Week 1 - Day 1" with warm-up, workout, and recovery sections
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section alt">
+        <div class="container">
+            <div class="intro-box" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                <h2>Program Features</h2>
+                <p>Once your program is loaded, you'll have access to:</p>
+                <ul>
+                    <li><strong>📅 Calendar View:</strong> See all scheduled workouts at a glance</li>
+                    <li><strong>📊 Progress Tracking:</strong> Monitor your completion and consistency</li>
+                    <li><strong>🔄 Automatic Scheduling:</strong> Workouts appear automatically on your selected days</li>
+                    <li><strong>📝 Workout Details:</strong> Each session includes warm-up, main workout, and recovery</li>
+                    <li><strong>✅ Log Results:</strong> Track your performance and maintain your workout streak</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ReadyWOD. All rights reserved. | <a href="mailto:readywod@outlook.com">Contact Us</a> | <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
